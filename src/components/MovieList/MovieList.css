@@ -1,4 +1,4 @@
-h1 {
+.main-title {
     text-align: center;
     margin-top: 5%;
 }
@@ -19,7 +19,7 @@ h1 {
 }
 
 .filter {
-    background: linear-gradient(90deg, rgba(1, 51, 195, 1) 0%, rgba(9, 9, 121, 1) 48%);
+    background: linear-gradient(to right, rgba(30, 213, 169, 1) 0%, rgba(1, 180, 228, 1) 100%);
     color: white;
     border: none;
     padding: 10px 20px;

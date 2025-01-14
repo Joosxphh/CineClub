@@ -19,7 +19,7 @@ const MovieList = () => {
 
     return (
         <>
-            <h1>Liste de
+            <h1 className="main-title">Liste de
                 films {filter === 'now_playing' ? 'actuellement au cinéma' : filter === 'popular' ? 'populaires' : filter === 'top_rated' ? 'les mieux notés' : 'à venir'}</h1>
             <div className="search-container">
                 <input

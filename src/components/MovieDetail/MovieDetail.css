@@ -1,0 +1,75 @@
+.movie-detail {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-blend-mode: saturation;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+}
+
+.movie-image {
+    width: 400px;
+    object-fit: contain;
+    border-radius: 50px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.movie-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.movie-information {
+    padding: 20px;
+}
+
+.infos {
+    display: flex;
+    margin: 0 0 2% 0;
+}
+
+.infos p {
+    font-style: italic;
+    color: #c1c1c1;
+    margin-right: 2%;
+}
+
+.note {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f4c10f;
+    margin-bottom: 2%;
+}
+
+.acteur-liste {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.acteur {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.acteur img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist {
+    width: 20%;
+    margin: 2% 0;
+}
