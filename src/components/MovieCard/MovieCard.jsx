@@ -9,13 +9,14 @@ const MovieCard = ({movie}) => {
                 <div className={styles["rating-circle"]}>
                     <span>{movie.vote_average.toFixed(1)} ⭐</span>
                 </div>
-                <h3>{movie.title}</h3>
+
                 <div className={styles["button-container"]}>
                     <span className={styles.button}>
                         Voir les détails
                     </span>
                 </div>
             </div>
+            <h3>{movie.title}</h3>
         </Link>
     );
 };
