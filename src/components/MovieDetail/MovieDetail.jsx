@@ -3,13 +3,15 @@ import {useEffect, useState} from "react";
 import './MovieDetail.css';
 import {useWishlist} from "../../context/WishlistContext.jsx";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const MovieDetail = () => {
     const {id} = useParams();
     const [movie, setMovie] = useState(null);
     const {addToWishlist} = useWishlist();
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=daecc2030d9d538a823a8e0e08110341&append_to_response=credits`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`)
             .then(response => response.json())
             .then(data => setMovie(data));
     }, [id]);

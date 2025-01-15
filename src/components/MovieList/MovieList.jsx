@@ -2,6 +2,8 @@ import MovieCard from "../MovieCard/MovieCard.jsx";
 import {useEffect, useState} from "react";
 import './MovieList.css';
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [filter, setFilter] = useState('popular');
@@ -9,8 +11,8 @@ const MovieList = () => {
 
     useEffect(() => {
         const url = searchQuery
-            ? `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=daecc2030d9d538a823a8e0e08110341`
-            : `https://api.themoviedb.org/3/movie/${filter}?api_key=daecc2030d9d538a823a8e0e08110341`;
+            ? `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=${API_KEY}`
+            : `https://api.themoviedb.org/3/movie/${filter}?api_key=${API_KEY}`;
 
         fetch(url)
             .then((response) => response.json())
