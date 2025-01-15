@@ -30,7 +30,7 @@
 
 .infos {
     display: flex;
-    margin: 0 0 2% 0;
+    gap: 10px;
 }
 
 .release-date, .genres, .duree {
@@ -83,25 +83,19 @@
     flex-wrap: wrap;
     gap: 20px;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    padding: 0;
 }
 
-.acteur img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+.similar-movie {
+    width: 150px;
+    text-align: center;
 }
 
-.wishlist {
-    width: 20%;
-    margin: 2% 0;
+.similar-movie-image {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.small {
-    width: 20%;
+.similar-movie-name {
+    margin-top: 10px;
 }
