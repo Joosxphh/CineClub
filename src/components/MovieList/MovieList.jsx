@@ -1,6 +1,6 @@
 import MovieCard from "../MovieCard/MovieCard.jsx";
 import {useEffect, useState} from "react";
-import './MovieList.css';
+import styles from './MovieList.module.css';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -32,9 +32,11 @@ const MovieList = () => {
 
     return (
         <>
-            <h1 className="main-title">Liste de
-                films {filter === 'now_playing' ? 'actuellement au cinéma' : filter === 'popular' ? 'populaires' : filter === 'top_rated' ? 'les mieux notés' : 'à venir'}</h1>
-            <div className="search-container">
+            <h1 className={styles["main-title"]}>
+                Liste de
+                films {filter === 'now_playing' ? 'actuellement au cinéma' : filter === 'popular' ? 'populaires' : filter === 'top_rated' ? 'les mieux notés' : 'à venir'}
+            </h1>
+            <div className={styles["search-container"]}>
                 <input
                     type="text"
                     placeholder="Rechercher un film..."
@@ -42,23 +44,35 @@ const MovieList = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </div>
-            <div className="filter-container">
-                <button className="filter" onClick={() => setFilter('now_playing')}>Actuellement au cinéma</button>
-                <button className="filter" onClick={() => setFilter('popular')}>Populaire</button>
-                <button className="filter" onClick={() => setFilter('top_rated')}>Les mieux notés</button>
-                <button className="filter" onClick={() => setFilter('upcoming')}>A venir</button>
+            <div className={styles["filter-container"]}>
+                <button className={styles.filter} onClick={() => setFilter('now_playing')}>
+                    Actuellement au cinéma
+                </button>
+                <button className={styles.filter} onClick={() => setFilter('popular')}>
+                    Populaire
+                </button>
+                <button className={styles.filter} onClick={() => setFilter('top_rated')}>
+                    Les mieux notés
+                </button>
+                <button className={styles.filter} onClick={() => setFilter('upcoming')}>
+                    A venir
+                </button>
             </div>
-            <div className="movie-list">
+            <div className={styles["movie-list"]}>
                 {movies.map((movie) => (
                     <MovieCard key={movie.id} movie={movie}/>
                 ))}
             </div>
-            <div className="pagination">
-                <button onClick={handlePreviousPage} disabled={page === 1}>Précédent</button>
-                <button onClick={handleNextPage}>Suivant</button>
+            <div className={styles.pagination}>
+                <button onClick={handlePreviousPage} disabled={page === 1}>
+                    Précédent
+                </button>
+                <button onClick={handleNextPage}>
+                    Suivant
+                </button>
             </div>
         </>
     );
-}
+};
 
 export default MovieList;
