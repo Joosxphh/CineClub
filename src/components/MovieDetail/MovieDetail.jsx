@@ -53,6 +53,17 @@ const MovieDetail = () => {
                             </li>
                         ))}
                     </ul>
+                    <h2 className="similar-title">Films Similaires</h2>
+                    <ul className="similar-movies">
+                        {similarMovies.slice(0, 5).map(similarMovie => (
+                            <li key={similarMovie.id} className="similar-movie">
+                                <img className="similar-movie-image"
+                                     src={`https://image.tmdb.org/t/p/w200${similarMovie.poster_path}`}
+                                     alt={similarMovie.title}/>
+                                <p className="similar-movie-name">{similarMovie.title}</p>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </>
