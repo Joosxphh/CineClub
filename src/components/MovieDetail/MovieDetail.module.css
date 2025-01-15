@@ -9,6 +9,7 @@
     display: flex;
 }
 
+
 .movie-image {
     width: 400px;
     object-fit: contain;
@@ -72,6 +73,10 @@
     border-radius: 100px;
     cursor: pointer;
     width: 20%;
+}
+
+.movie-information p {
+    color: #fff;
 }
 
 .acteur-liste {
