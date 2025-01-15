@@ -8,18 +8,25 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const MovieDetail = () => {
     const {id} = useParams();
     const [movie, setMovie] = useState(null);
+    const [similarMovies, setSimilarMovies] = useState([]);
     const {addToWishlist} = useWishlist();
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits&language=fr-FR`)
             .then(response => response.json())
             .then(data => setMovie(data));
+    }, [id]);
+
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=fr-FR`)
+            .then(response => response.json())
+            .then(data => setSimilarMovies(data.results));
     }, [id]);
 
     if (!movie) {
         return <div>Loading...</div>;
     }
-    console.log(movie);
+
     return (
         <>
             <div className="movie-detail"

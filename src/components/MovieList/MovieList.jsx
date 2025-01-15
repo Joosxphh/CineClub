@@ -8,16 +8,27 @@ const MovieList = () => {
     const [movies, setMovies] = useState([]);
     const [filter, setFilter] = useState('popular');
     const [searchQuery, setSearchQuery] = useState('');
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         const url = searchQuery
-            ? `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=${API_KEY}`
-            : `https://api.themoviedb.org/3/movie/${filter}?api_key=${API_KEY}`;
+            ? `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&api_key=${API_KEY}&language=fr-FR&page=${page}`
+            : `https://api.themoviedb.org/3/movie/${filter}?api_key=${API_KEY}&language=fr-FR&page=${page}`;
 
         fetch(url)
             .then((response) => response.json())
             .then((data) => setMovies(data.results));
-    }, [filter, searchQuery]);
+    }, [filter, searchQuery, page]);
+
+    const handleNextPage = () => {
+        setPage((prevPage) => prevPage + 1);
+    };
+
+    const handlePreviousPage = () => {
+        if (page > 1) {
+            setPage((prevPage) => prevPage - 1);
+        }
+    };
 
     return (
         <>
@@ -41,6 +52,10 @@ const MovieList = () => {
                 {movies.map((movie) => (
                     <MovieCard key={movie.id} movie={movie}/>
                 ))}
+            </div>
+            <div className="pagination">
+                <button onClick={handlePreviousPage} disabled={page === 1}>Précédent</button>
+                <button onClick={handleNextPage}>Suivant</button>
             </div>
         </>
     );

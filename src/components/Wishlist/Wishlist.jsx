@@ -9,7 +9,8 @@ const Wishlist = () => {
             <ul>
                 {wishlist.map(movie => (
                     <li key={movie.id}>
-                        <img src={movie.image} alt={movie.title}/>
+                        <img className="movie-image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                             alt={movie.title}/>
                         <div>
                             <h3>{movie.title}</h3>
                             <button onClick={() => removeFromWishlist(movie.id)}>Supprimer</button>

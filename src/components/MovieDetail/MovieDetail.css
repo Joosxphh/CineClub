@@ -25,7 +25,7 @@
 }
 
 .movie-information {
-    padding: 20px;
+    margin: 20px;
 }
 
 .infos {
@@ -33,27 +33,55 @@
     margin: 0 0 2% 0;
 }
 
-.infos p {
-    font-style: italic;
-    color: #c1c1c1;
-    margin-right: 2%;
+.release-date, .genres, .duree {
+    margin: 0;
 }
 
 .note {
     font-size: 1.5rem;
-    font-weight: 700;
-    color: #f4c10f;
-    margin-bottom: 2%;
+    margin: 10px 0;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.wishlist-detail {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #032541;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .acteur-liste {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    gap: 10px;
+    list-style: none;
     padding: 0;
 }
 
 .acteur {
+    width: 100px;
+    text-align: center;
+}
+
+.similar-title {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.similar-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     list-style: none;
     display: flex;
     flex-direction: column;

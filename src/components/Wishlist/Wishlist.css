@@ -1,3 +1,12 @@
+.wishlist {
+    display: block;
+    margin: auto 0;
+    width: 100%;
+}
+
+.wishlist h2 {
+    margin: 2%;
+}
 
 .wishlist ul {
     list-style: none;
@@ -10,20 +19,23 @@
     margin-bottom: 10px;
 }
 
+.wishlist h3 {
+    width: 100%;
+}
+
 .wishlist img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 20px;
 }
 
 .wishlist button {
-    background-color: #f44336;
+    background: linear-gradient(45deg, #f44336, #d32f2f);
     color: white;
     border: none;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 100px;
     cursor: pointer;
 }
 
