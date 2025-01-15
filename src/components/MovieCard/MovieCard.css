@@ -34,7 +34,6 @@ li {
 }
 
 .button {
-    width: 100%;
     border: none;
     background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
     -webkit-background-clip: text;

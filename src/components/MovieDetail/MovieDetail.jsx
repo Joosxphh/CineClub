@@ -41,30 +41,35 @@ const MovieDetail = () => {
                         <p className="duree">{Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m</p></div>
                     <p className="note">{'⭐'.repeat(Math.round(movie.vote_average))}</p>
                     <p>{movie.overview}</p>
-                    <div className="button-container wishlist">
+                    <div className="button-container wishlist-detail">
                         <button className="button" onClick={() => addToWishlist(movie)}>Ajouter à la wishlist</button>
                     </div>
                     <h2>Acteurs</h2>
                     <ul className="acteur-liste">
                         {movie.credits.cast.slice(0, 10).map(actor => (
                             <li key={actor.id} className="acteur">
-                                <img src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name}/>
+                                <img className="acteur-image"
+                                     src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name}/>
                                 {actor.name}
                             </li>
                         ))}
                     </ul>
-                    <h2 className="similar-title">Films Similaires</h2>
-                    <ul className="similar-movies">
-                        {similarMovies.slice(0, 5).map(similarMovie => (
-                            <li key={similarMovie.id} className="similar-movie">
-                                <img className="similar-movie-image"
-                                     src={`https://image.tmdb.org/t/p/w200${similarMovie.poster_path}`}
-                                     alt={similarMovie.title}/>
-                                <p className="similar-movie-name">{similarMovie.title}</p>
-                            </li>
-                        ))}
-                    </ul>
+
                 </div>
+
+            </div>
+            <div className="trailer">
+                <h2 className="similar-title">Films Similaires</h2>
+                <ul className="similar-movies">
+                    {similarMovies.slice(0, 5).map(similarMovie => (
+                        <li key={similarMovie.id} className="similar-movie">
+                            <img className="similar-movie-image"
+                                 src={`https://image.tmdb.org/t/p/w200${similarMovie.poster_path}`}
+                                 alt={similarMovie.title}/>
+                            <p className="similar-movie-name">{similarMovie.title}</p>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </>
     );
