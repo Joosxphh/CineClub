@@ -129,5 +129,8 @@
     display: block;
     margin: 2%;
     flex-direction: column;
+}
 
+.button {
+    cursor: pointer;
 }

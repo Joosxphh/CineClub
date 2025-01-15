@@ -51,7 +51,7 @@ const MovieDetail = () => {
                     <p>{movie.overview}</p>
                     <div className={`${styles["button-container"]} ${styles["wishlist-detail"]}`}>
                         <button className={styles.button} onClick={() => addToWishlist(movie)}>
-                            Ajouter à la wishlist
+                            Ajouter à ma wishlist
                         </button>
                     </div>
                     <h2>Acteurs</h2>
