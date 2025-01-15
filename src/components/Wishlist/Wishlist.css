@@ -1,0 +1,32 @@
+
+.wishlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wishlist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wishlist img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.wishlist button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wishlist button:hover {
+    background-color: #d32f2f;
+}
