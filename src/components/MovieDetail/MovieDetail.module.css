@@ -53,14 +53,24 @@
 }
 
 .wishlist-detail .button {
-    background-color: #032541;
-    color: #fff;
     border: none;
-    cursor: pointer;
+    background: linear-gradient(to right, #c0fecf 0, #1ed5a9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     border-radius: 5px;
+    margin: 10px 0;
 }
 
 .movie-information .button-container {
+    display: flex;
+    justify-content: center;
+    background-color: #032541;
+    border-radius: 100px;
+    cursor: pointer;
     width: 20%;
 }
 

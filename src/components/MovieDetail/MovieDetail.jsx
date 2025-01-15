@@ -1,6 +1,6 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
-import './MovieDetail.css';
+import styles from './MovieDetail.module.css';
 import {useWishlist} from "../../context/WishlistContext.jsx";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -29,50 +29,63 @@ const MovieDetail = () => {
 
     return (
         <>
-            <div className="movie-detail"
-                 style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`}}>
-                <img className="movie-image" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                     alt={movie.title}/>
-                <div className="movie-information">
-                    <h1 className="movie-title">{movie.title}</h1>
-                    <div className="infos">
-                        <p className="release-date">{movie.release_date}</p>
-                        <p className="genres">{movie.genres.map(genre => genre.name).join(", ")}</p>
-                        <p className="duree">{Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m</p></div>
-                    <p className="note">{'⭐'.repeat(Math.round(movie.vote_average))}</p>
+            <div
+                className={styles["movie-detail"]}
+                style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`}}
+            >
+                <img
+                    className={styles["movie-image"]}
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                />
+                <div className={styles["movie-information"]}>
+                    <h1 className={styles["movie-title"]}>{movie.title}</h1>
+                    <div className={styles.infos}>
+                        <p className={styles["release-date"]}>{movie.release_date}</p>
+                        <p className={styles.genres}>{movie.genres.map(genre => genre.name).join(", ")}</p>
+                        <p className={styles.duree}>
+                            {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m
+                        </p>
+                    </div>
+                    <p className={styles.note}>{'⭐'.repeat(Math.round(movie.vote_average))}</p>
                     <p>{movie.overview}</p>
-                    <div className="button-container wishlist-detail">
-                        <button className="button" onClick={() => addToWishlist(movie)}>Ajouter à la wishlist</button>
+                    <div className={`${styles["button-container"]} ${styles["wishlist-detail"]}`}>
+                        <button className={styles.button} onClick={() => addToWishlist(movie)}>
+                            Ajouter à la wishlist
+                        </button>
                     </div>
                     <h2>Acteurs</h2>
-                    <ul className="acteur-liste">
+                    <ul className={styles["acteur-liste"]}>
                         {movie.credits.cast.slice(0, 10).map(actor => (
-                            <li key={actor.id} className="acteur">
-                                <img className="acteur-image"
-                                     src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} alt={actor.name}/>
+                            <li key={actor.id} className={styles.acteur}>
+                                <img
+                                    className={styles["acteur-image"]}
+                                    src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                                    alt={actor.name}
+                                />
                                 {actor.name}
                             </li>
                         ))}
                     </ul>
-
                 </div>
-
             </div>
-            <div className="trailer">
-                <h2 className="similar-title">Films Similaires</h2>
-                <ul className="similar-movies">
+            <div className={styles.trailer}>
+                <h2 className={styles["similar-title"]}>Films Similaires</h2>
+                <ul className={styles["similar-movies"]}>
                     {similarMovies.slice(0, 5).map(similarMovie => (
-                        <li key={similarMovie.id} className="similar-movie">
-                            <img className="similar-movie-image"
-                                 src={`https://image.tmdb.org/t/p/w200${similarMovie.poster_path}`}
-                                 alt={similarMovie.title}/>
-                            <p className="similar-movie-name">{similarMovie.title}</p>
+                        <li key={similarMovie.id} className={styles["similar-movie"]}>
+                            <img
+                                className={styles["similar-movie-image"]}
+                                src={`https://image.tmdb.org/t/p/w200${similarMovie.poster_path}`}
+                                alt={similarMovie.title}
+                            />
+                            <p className={styles["similar-movie-name"]}>{similarMovie.title}</p>
                         </li>
                     ))}
                 </ul>
             </div>
         </>
     );
-}
+};
 
 export default MovieDetail;
